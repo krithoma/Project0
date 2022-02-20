@@ -18,20 +18,29 @@ public class movementParse {
         //Now look at room data and show which doors exist.
         System.out.print("There is an opening to the: ");
         if(checkroom.getWhoNorthDoor() > -1){
-            System.out.println("north ");
+            System.out.print("north ");
         }
         if(checkroom.getWhoSouthDoor() > -1){
-            System.out.println("south ");
+            System.out.print("south ");
         }
         if(checkroom.getWhoEastDoor() > -1){
-            System.out.println("east ");
+            System.out.print("east ");
         }
         if(checkroom.getWhoWestDoor() > -1){
-            System.out.println("west ");
+            System.out.print("west ");
         }
+        System.out.println(" ");
 
         //Now check if item exists and display those too.
-
+        if(checkroom.getHasOrb()){
+            System.out.println("The golden orb shines from it's place on the floor.");
+        }
+        if(checkroom.getHasKey()){
+            System.out.println("The silver glint of a key catches your eye.");
+        }
+        if(checkroom.getHasSword()){
+            System.out.println("A sword is propped pommel down in the corner.");
+        }
     }
 
     public int movePlayer(String direction, int wherearewe){
