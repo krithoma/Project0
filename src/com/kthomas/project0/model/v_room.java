@@ -12,6 +12,8 @@ public class v_room {
     boolean hasOrb;
     boolean hasKey;
     boolean hasSword;
+    boolean isLocked;
+    boolean hasOgre;
     String roomdesc;
 
     //Will need handles to objects stored, if present.
@@ -68,6 +70,22 @@ public class v_room {
     public void setHasKey(boolean v_set){hasKey = v_set;}
 
     public void setHasSword(boolean v_set){hasSword = v_set;}
+
+    public boolean isLocked() {
+        return isLocked;
+    }
+
+    public void setLocked(boolean locked) {
+        isLocked = locked;
+    }
+
+    public boolean isHasOgre() {
+        return hasOgre;
+    }
+
+    public void setHasOgre(boolean hasOgre) {
+        this.hasOgre = hasOgre;
+    }
 
     public boolean checkItems(){
         if(hasOrb || hasKey || hasSword){
