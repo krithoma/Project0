@@ -1,5 +1,6 @@
 package com.kthomas.project0.driver;
 
+import com.kthomas.project0.dao.v_playerDAO;
 import com.kthomas.project0.dao.v_roomDAO;
 import com.kthomas.project0.model.v_entity;
 import com.kthomas.project0.model.v_map;
@@ -28,7 +29,7 @@ public class Playloop {
             v_roomDAO catacombdao = new v_roomDAO();
             catacomb = catacombdao.getV_room();
         } catch (SQLException e) {
-            Driver.log.log(Level.WARN, "Bad or missing data...", e);
+            Driver.log.warn("Bad or missing data...", e);
         }
 
         //Now setup where the items are located, one to a room.
@@ -81,7 +82,12 @@ public class Playloop {
         } while(quitflag == false);
 
        //Save player stats to database on way out.
-
+        try {
+            v_playerDAO playerdao = new v_playerDAO();
+            playerdao.setV_player(playerOne);
+        }catch(SQLException e){
+            Driver.log.warn("Bad or missing data...", e);
+        }
         playerinput.close();
     }
 }

@@ -31,15 +31,15 @@ public class KTConnectionUtil {
                   Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                   conn = java.sql.DriverManager.getConnection(url, username, password);
               }catch(SQLException e){
-                  Driver.log.log(Level.WARN, "Difficulty connecting...", e);
+                  Driver.log.warn("Difficulty connecting...", e);
               } catch (ClassNotFoundException e) {
-                  Driver.log.log(Level.WARN, "Difficulty connecting...", e);
+                  Driver.log.warn("Difficulty connecting...", e);
               }
           }
         } catch(FileNotFoundException e){
-            Driver.log.log(Level.WARN, "No file...", e);
+            Driver.log.warn("No file...", e);
         } catch(IOException e){
-            Driver.log.log(Level.WARN, "No file...", e);
+            Driver.log.warn("No file...", e);
         }
         return conn;
     }
