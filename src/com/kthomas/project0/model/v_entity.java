@@ -7,6 +7,9 @@ public class v_entity {
     boolean hasOrb = false;
     boolean hasSword = false;
     int numberOfTurns = 0;
+    int maxTurns = 0;
+    int minTurns = 0;
+    int avgTurns = 0;
     int numberOfWins = 0;
     int numberOfLosses = 0;
     int wherePlayer = 0;
@@ -81,5 +84,29 @@ public class v_entity {
 
     public boolean hasItem(){
         return hasOrb || hasSword || hasKey;
+    }
+
+    public int getMaxTurns() {
+        return maxTurns;
+    }
+
+    public void setMaxTurns(int maxTurns) {
+        this.maxTurns = maxTurns;
+    }
+
+    public int getMinTurns() {
+        return minTurns;
+    }
+
+    public void setMinTurns(int minTurns) {
+        this.minTurns = minTurns;
+    }
+
+    public int getAvgTurns() {
+        return avgTurns;
+    }
+
+    public void setAvgTurns(int avgTurns) {
+        this.avgTurns = avgTurns;
     }
 }

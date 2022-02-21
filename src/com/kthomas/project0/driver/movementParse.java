@@ -211,6 +211,8 @@ public class movementParse {
             moveItem(direction,wherearewe,player);
         }else if(direction.equals("quit")) {
             System.out.println("You run away from such a dangerous catacomb!");
+        }else if(direction.equals("???")) {
+            System.out.println("Commands are: [north south east west key orb sword drop ??? quit]");
         }else{
             System.out.println("Please limit responses to single word directions in lowercase.");
         }
