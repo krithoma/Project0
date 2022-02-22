@@ -61,8 +61,11 @@ public class v_playerDAO {
             int win = player.getNumberOfWins();
             int lose = player.getNumberOfLosses();
             int minturn = player.getMinTurns();
+            //int minturn = 0;
             int maxturn = player.getMaxTurns();
+            //int maxturn = 0;
             int avgturn = player.getAvgTurns();
+            //int avgturn = 0;
 
             if(!checkV_player(v_name)) {
                 String sqlstatement = "INSERT INTO vplayerdata (player_id,wins,loses,minnumturns,maxnumturns,avernumturns) ";
